@@ -1,9 +1,33 @@
+'use client';
+
 import Image from 'next/image';
 import styles from './page.module.css';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    console.log('Your order placed!');
+    router.push(`/product`);
+    // router.replace(`/product`);
+  };
+
   return (
-    <div>Home Page</div>
+    <div>
+      {/* <h1>Home Page</h1>
+      <Link href={'/blog'}>Blog</Link>
+      <Link href={'/product'}>Products</Link>
+      <button onClick={handleClick}>Place Order</button> */}
+      <h1>Next JS Pre-rendering </h1>
+      <Link href={'/users'} prefetch>
+        Users
+      </Link>
+      <Link href={'/posts'} prefetch>
+        Posts
+      </Link>
+    </div>
     // <main className={styles.main}>
     //   <div className={styles.description}>
     //     <p>
