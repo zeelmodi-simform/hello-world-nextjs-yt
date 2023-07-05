@@ -16,6 +16,19 @@ export async function generateStaticParams() {
   // return [{ postId: '1' }, { postId: '2' }]; NOTE: will be use when dynamicParams are true
 }
 
+export async function generateMetadata({ params, searchParams }, parent) {
+
+  const id = params.postId
+  
+  const {post} = await getPostDetails(id)
+
+  return {
+    title: post?.title,
+    description: post?.body
+  }
+
+}
+
 const Post = async ({ params: { postId } }) => {
   const { post } = await getPostDetails(postId);
   //   const router = useRouter();
