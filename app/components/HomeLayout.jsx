@@ -4,19 +4,19 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 
-const HomeLayout = ({children}) => {
-    const pathname = usePathname()
+const HomeLayout = ({ children }) => {
+  const pathname = usePathname()
   return (
-      <>
-          {pathname === '/about' ? children : (
-              <>
-                  <Header />
-                  {children}
-                  <Footer />
-                  </>
-        )}
-      </>
+    <>
+      {pathname === '/about' ? children : (
+        <>
+          <Header />
+          {children}
+          <Footer />
+        </>
+      )}
+    </>
   )
-}
+};
 
 export default HomeLayout
