@@ -6,3 +6,4 @@ export async function GET(Request) {
   // });
   return NextResponse.json({ name: 'Home API route' }, { status: 200 });
 }
+// 7q9c0kp3gqR8DO5U
