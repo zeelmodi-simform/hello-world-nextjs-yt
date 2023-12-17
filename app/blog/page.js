@@ -8,7 +8,7 @@ const Blog = async () => {
   const { data, session } = await getSessionDetails()
   
   if (!session) {
-    redirect(`/api/auth/signin?callbackUrl=http://localhost:3000/blog`,'replace')
+    redirect(`/api/auth/signin?callbackUrl=${process.env.NEXT_PUBLIC_CALLBACK_URL}/blog`,'replace')
   }
 
   return <h1>Blog Page - {data}</h1>;
